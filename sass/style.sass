@@ -1,0 +1,40 @@
+$red_text: red
+$blue_text: blue
+
+@mixin box1
+    width: 550px
+    height: 500px
+    background-color: orange
+    display: block
+
+= box2
+    width: 250px
+    height: 200px
+    background-color: red
+    display: block
+    
+*
+    transition:  1s all
+
+h1
+    color: white
+    font-size: 50px
+    +box2
+h3
+    color: $blue_text
+
+.block
+    background-color: #000
+    h3
+        color: white
+    &_color
+        height: 100px
+        width: 100%
+        background-color: #f0f
+        button
+            @include box1
+            border-radius: 25px
+    .block_color > h3
+        color: $red_text !important
+        font-size: 5rem
+        transition:  1s all
